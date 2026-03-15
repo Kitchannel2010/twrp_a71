@@ -59,7 +59,7 @@ BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom androidboot.memcg
 BOARD_BOOTIMG_HEADER_VERSION := 2
 
 # Kernel: Board (kernel...) flags
-BOARD_NAME               := SRPSL10B002
+BOARD_NAME               := SRPSF18B011
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_RAMDISK_OFFSET     := 0x02000000
