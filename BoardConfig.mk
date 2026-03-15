@@ -49,13 +49,13 @@ ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 
 # UEFI
-#TARGET_USES_UEFI := true
+TARGET_USES_UEFI := true
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := a71
 
 # Kernel: Base flags
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 androidboot.usbcontroller=a600000.dwc3 firmware_class.path=/vendor/firmware_mnt/image nokaslr loop.max_part=7 printk.devkmsg=on androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 androidboot.usbcontroller=a600000.dwc3 firmware_class.path=/vendor/firmware_mnt/image nokaslr printk.devkmsg=on loop.max_part=7
 BOARD_BOOTIMG_HEADER_VERSION := 2
 
 # Kernel: Board (kernel...) flags
@@ -70,7 +70,6 @@ BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
-BOARD_MKBOOTIMG_ARGS += --dtb_offset 0x01f00000
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --board $(BOARD_NAME)
 
@@ -112,7 +111,7 @@ TARGET_USES_MKE2FS := true
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Extras
-BOARD_ROOT_EXTRA_FOLDERS := metadata persist efs sec_efs firmware
+BOARD_ROOT_EXTRA_FOLDERS := persist efs sec_efs firmware
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Partition: Size
