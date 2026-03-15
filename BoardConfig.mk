@@ -112,7 +112,7 @@ TARGET_USES_MKE2FS := true
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Extras
-BOARD_ROOT_EXTRA_FOLDERS := persist efs sec_efs firmware
+BOARD_ROOT_EXTRA_FOLDERS := metadata persist efs sec_efs firmware
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Partition: Size
